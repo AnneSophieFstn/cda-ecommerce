@@ -1,62 +1,53 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# SITE MIELPÉI - E-COMMERCE
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+Vous trouverez ci-après les points qui devront être embarqué dans votre version béta de l’application:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Permettre au client :
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* la commande en ligne de Miel
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* La visualisation de fiche producteur (ces fiches incorporeront une liste des produits vendu par le producteur)
 
-## Learning Laravel
+* la visualisation de leur panier
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* le passage de commande avec adresse de livraison et facturation
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* un historique des commandes passé
 
-## Laravel Sponsors
+* le téléchargement des factures au format PDF (pas de mise en page poussé pour la version béta)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### La page d'accueil comportera :
 
-### Premium Partners
+* Une carte composée des positions des "exploitation", cette carte sera interactive pour permettre le l'affichage des fiches descriptive avec un lien vers la fiche complète
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+* les meilleurs vente encore en stock
 
-## Contributing
+### Les producteurs pourront :
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* avoir accès à un Dashboard individuel
 
-## Code of Conduct
+* CRUD des produits
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* Gérer leurs stocks
 
-## Security Vulnerabilities
+* Modifier leur fiche producteur
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+* avoir une visualisation de leur commande avec l'état d'avancé de celle-ci
 
-## License
+### L’administrateur du site pourra :
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* gérer les compte utilisateur du site : modifier le mail, changer le rôle, suspendre un compte
+
+Aucune solution technique n'est privilégiée. Le client souhaite  rai une solution dynamique.
+
+L'application béta devra être livré en ligne pour que le client puisse effectuer la recette des fonctionnalités.
+
+### CONFIGURATION
+
+- npm install
+- composer install
+
+### SERVEUR
+- Renommer "env.example" en " .env "
+- Créer la base de données
