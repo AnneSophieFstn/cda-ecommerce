@@ -5,6 +5,7 @@
         <div class="jumbotron text-center">
             <h1 class="display-3">Merci!</h1>
             <p class="lead"><strong>Votre commande a été traitée avec succès</strong></p>
+            <p class="lead"><strong>Votre facture est accessible dans l'onglet " Mes commandes".</a></strong></p>
             <hr>
             <p>
                 Vous rencontrez un problème? <a href="#">Nous contacter</a>

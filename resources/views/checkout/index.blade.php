@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="col-md-12">
-        <h1>Page de paiment</h1>
+        <h1>Page de paiement</h1>
         <div class="row">
             <div class="col-md-6">
                 <form action="{{ route('checkout.store') }}" method="POST" class="my-4" id="payment-form">

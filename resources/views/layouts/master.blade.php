@@ -8,12 +8,16 @@
     <meta name="generator" content="Jekyll v3.8.6">
 
     @yield('extra-meta')
+
     <title>Mielpéi 974</title>
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+
 
     @yield('extra-script')
+
+    <!-- Bootstrap 4 -->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -206,7 +210,7 @@
 </main> /.container -->
 
 <footer class="blog-footer">
-  <p><a href="https://getbootstrap.com/">Nord Coders</a> - 🛒 Application E-Commerce avec Laravel 6</p>
+  <p><a href="#">Faustino Anne-Sophie</a> - 🛒 Site E-Commerce avec Laravel 8</p>
   <p>
     <a href="#">Revenir en haut</a>
   </p>

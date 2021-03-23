@@ -29,7 +29,7 @@ class ProductsTableSeeder extends Seeder
            ], 
            [
                 'id' => 2,
-                'title' => 'Miel de citronier biologique - 500 g',
+                'title' => 'Miel de thym biologique - 500 g',
                 'slug' => 'Mielpéi b- 974',
                 'subtitle' => 'Mielpéi citronnier - 974',
                 'description' => 'Miel certifié agriculture biologique
@@ -40,7 +40,7 @@ class ProductsTableSeeder extends Seeder
            ], 
            [
                 'id' => 3,
-                'title' => 'Miel d\'alaska biologique - 500 g',
+                'title' => 'Miel d\'eucalyptus biologique - 500 g',
                 'slug' => 'Mielpéi c- 974',
                 'subtitle' => 'Mielpéi alaska- 974',
                 'description' => 'Miel certifié agriculture biologique
@@ -51,7 +51,7 @@ class ProductsTableSeeder extends Seeder
            ], 
            [
                 'id' => 4,
-                'title' => 'Miel d\'azur biologique - 500 g',
+                'title' => 'Miel de citronier biologique - 500 g',
                 'slug' => 'Mielpéi d- 974',
                 'subtitle' => 'Mielpéi azur- 974',
                 'description' => 'Miel certifié agriculture biologique

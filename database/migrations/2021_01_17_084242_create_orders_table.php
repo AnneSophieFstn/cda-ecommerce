@@ -19,8 +19,8 @@ class CreateOrdersTable extends Migration
             $table->integer('amount');
             $table->datetime('payment_created_at');
             $table->text('products');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->onDelete('cascade');
+            $table->BigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -32,6 +32,8 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('orders');
+        Schema::enableForeignKeyConstraints();
     }
 }

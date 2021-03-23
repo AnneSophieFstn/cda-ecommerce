@@ -7,7 +7,8 @@
 @section('content')
 
 @if (Cart::count() > 0)
-<div class="px-4 px-lg-0">
+<div class="px-4 px-lg-0 col-md-12">
+
     <div class="pb-5">
         <div class="container">
             <div class="row">
@@ -36,14 +37,13 @@
                             <tr>
                                 <th scope="row" class="border-0">
                                     <div class="p-2">
-                                        <img src="{{ $product->image }}" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                        <img src="{{ asset('storage/' . $product->model->image) }}" alt="" width="70" class="img-fluid rounded shadow-sm">
                                         <div class="ml-3 d-inline-block align-middle">
-                                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">{{ $product->title }}</a></h5>
-                                            <span class="text-muted font-weight-normal font-italic d-block">Categorie: </span>
+                                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">{{ $product->model->title }}</a></h5>
                                         </div>
                                     </div>
                                 </th>
-                                <td class="border-0 align-middle"><strong>{{ $product->price }} €</strong></td>
+                                <td class="border-0 align-middle"><strong>{{ $product->model->price }} €</strong></td>
                                 <td class="border-0 align-middle">
                                     <select class="custom-select" name="qty" id="qty" data-id="{{ $product->rowId }}" data-stock="{{ $product->model->stock }}">
                                         @for ($i = 1; $i <= 10; $i++)
@@ -69,39 +69,20 @@
                 </div>
             </div>
             <div class="row py-5 p-4 bg-white rounded shadow-sm">
-                    <div class="col-lg-6">
-                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Coupon code</div>
-                    <div class="p-4">
-                        <p class="font-italic mb-4">Si vous avez un code promo, veuillez le saisir dans la case ci-dessous.</p>
-                        <div class="input-group mb-4 border rounded-pill p-2">
-                        <input type="text" placeholder="Entrez le coupon" aria-describedby="button-addon3" class="form-control border-0">
-                        <div class="input-group-append border-0">
-                            <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Valider le coupon</button>
-                        </div>
-                        </div>
+
+                    <div class="col-lg-12">
+                        <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Détails de la commande </div>
+                            <div class="p-4">
+                                <p class="font-italic mb-4">Les frais d'expédition et supplémentaires sont calculés en fonction des valeurs que vous avez saisies.</p>
+                                <ul class="list-unstyled mb-4">
+                                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Sous total </strong><strong>{{getPrice(Cart::subtotal()) }}</strong></li>
+                                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Taxe</strong><strong>{{getPrice(Cart::tax()) }}</strong></li>
+                                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
+                                    <h5 class="font-weight-bold">{{getPrice(Cart::total()) }}</h5>
+                                </li>
+                                </ul><a href="{{ route('checkout.index') }}" class="btn btn-dark rounded-pill py-2 btn-block">Passer à la caisse</a>
+                            </div>
                     </div>
-                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Instructions pour le vendeur</div>
-                    <div class="p-4">
-                        <p class="font-italic mb-4">Si vous avez des informations pour le vendeur, vous pouvez les laisser dans la case ci-dessous.</p>
-                        <textarea name="" cols="30" rows="2" class="form-control"></textarea>
-                    </div>
-                    </div>
-                    <div class="col-lg-6">
-                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Détails de la commande </div>
-                    <div class="p-4">
-                        <p class="font-italic mb-4">Les frais d'expédition et supplémentaires sont calculés en fonction des valeurs que vous avez saisies.
-</p>
-                        <ul class="list-unstyled mb-4">
-                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Sous total </strong><strong>{{getPrice(Cart::subtotal()) }}</strong></li>
-<!--                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>
- -->                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Taxe</strong><strong>{{getPrice(Cart::tax()) }}</strong></li>
-                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                            <h5 class="font-weight-bold">{{getPrice(Cart::total()) }}</h5>
-                        </li>
-                        </ul><a href="{{ route('checkout.index') }}" class="btn btn-dark rounded-pill py-2 btn-block">Passer à la caisse</a>
-                    </div>
-                    </div>
-            </div>
         </div>
     </div>
 </div>

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Database\Seeders\ProductsTableSeeder;
 
+
 class DatabaseSeeder extends Seeder
 {
     /**

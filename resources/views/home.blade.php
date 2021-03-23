@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Mes commandes</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -18,7 +18,9 @@
                     
                         <div class="card mb-3">
                             <div class="card-header">
-                                Commande passée le {{ Carbon\Carbon::parse($order->payment_created_at)->format('d/m/Y à H:i')}} d'un montant de <strong>{{ getPrice($order->amount) }}</strong>
+                                <strong>Commande passée le {{ Carbon\Carbon::parse($order->payment_created_at)->format('d/m/Y à H:i')}}</strong>
+                                ---
+                                <strong>Télécharger votre facture <a href="{{url('/pdf')}}/{{$row->id}}">ici</a></strong>
                             </div>
 
                             <div class="card-body">

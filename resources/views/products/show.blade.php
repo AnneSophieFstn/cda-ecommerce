@@ -13,7 +13,9 @@
         @if ($stock === 'Disponible')
         <form action="{{ route('cart.store') }}" method="POST">
           @csrf
-          <input type="hidden" name="product_id" value="{{ $product->id }}">
+          <input type="hidden" name="id" value="{{ $product->id }}">
+          <input type="hidden" name="title" value="{{ $product->title }}">
+          <input type="hidden" name="price" value="{{ $product->price }}">
           <button type="submit" class="btn btn-success mb-2"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Ajouter au panier</button>
         </form>
         @endif

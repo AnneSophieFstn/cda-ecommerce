@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use DateTime;
 use App\Models\Order;
 use App\Models\Product;
@@ -35,7 +36,7 @@ class CheckoutController extends Controller
         Stripe::setApiKey('sk_test_51IASu2FZEmW6TLriRIfiZWM6H0M3pqYQjG0ioy3sxfKrsHxZef7DJFZm6Ly6F8rB4vxtx4CyULErEy1W7vAYRJEd00xvZtdfXs');
 
         $intent = PaymentIntent::create([
-            'amount' => round(Cart::total()*100),
+            'amount' => round(Cart::total())*100,
             'currency' => 'eur',
         ]);
 
@@ -79,8 +80,8 @@ class CheckoutController extends Controller
         $i = 0;
 
         foreach (Cart::content() as $product) {
-            $products['product_' . $i][] = $product->title;
-            $products['product_' . $i][] = $product->price;
+            $products['product_' . $i][] = $product->model->title;
+            $products['product_' . $i][] = $product->model->price;
             $products['product_' . $i][] = $product->qty;
             $i++;
         }
@@ -99,6 +100,15 @@ class CheckoutController extends Controller
         }
     }
 
+    
+
+    public function pdf($id){
+        $data['row'] = Order::find($id);
+          
+        $pdf = PDF::loadView('checkout.pdf', [$data['row']]);
+    
+        return $pdf->stream('facture-mielpei974.pdf');
+    }
 
     public function thankyou(){
         return Session::has('success') ? view('checkout.thankYou') : redirect()->route('products.index');
