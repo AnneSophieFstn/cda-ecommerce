@@ -105,7 +105,7 @@ class CheckoutController extends Controller
     public function pdf($id){
         $data['row'] = Order::find($id);
           
-        $pdf = PDF::loadView('checkout.pdf', [$data['row']]);
+        $pdf = PDF::loadView('checkout.pdf', $data);
     
         return $pdf->stream('facture-mielpei974.pdf');
     }
