@@ -20,7 +20,7 @@
                             <div class="card-header">
                                 <strong>Commande passée le {{ Carbon\Carbon::parse($order->payment_created_at)->format('d/m/Y à H:i')}}</strong>
                                 ---
-                                <strong>Télécharger votre facture <a href="{{ route('checkout.pdf', $row->id )}}">ici</a></strong>
+                                <strong>Télécharger votre facture <a href="{{ route('checkout.pdf', $order->id )}}">ici</a></strong>
                             </div>
 
                             <div class="card-body">

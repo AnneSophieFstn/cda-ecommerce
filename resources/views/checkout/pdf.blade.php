@@ -22,17 +22,17 @@
 
         <table class="table table-bordered mt-4 ">
             <tr>
-                <th>Voiture</th>
-                <th>Immatriculation</th>
-                <th>Type</th>
-                <th>Assureur</th>
+                <th>Id</th>
+                <th>Nom article</th>
+                <th>Prix</th>
+                <th>Quantité</th>
             </tr>
 
             <tr>
-                <td>{{ $row->id }}</td>
-                <td>{{ $row->title }}</td>
-                <td>{{ $row->price }}</td>
-                <td>{{ $row->qty }}</td>
+                <td>{{ $order->id }}</td>
+                <td>{{ $order->title }}</td>
+                <td>{{ $order->price }}</td>
+                <td>{{ $order->qty }}</td>
             </tr>
 
         </table>

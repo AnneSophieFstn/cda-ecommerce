@@ -103,7 +103,7 @@ class CheckoutController extends Controller
     
 
     public function pdf($id){
-        $data['row'] = Order::find($id);
+        $data['order'] = Order::find($id);
           
         $pdf = PDF::loadView('checkout.pdf', $data);
     

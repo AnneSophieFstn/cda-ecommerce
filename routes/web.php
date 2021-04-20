@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\PagesController;
 use App\Http\Controllers\HomeController;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Models\Product;
@@ -21,9 +22,10 @@ use App\Models\Product;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ProductController::class,'index'])->name('products.index');
+
+
+Route::get('/fiche-producteur', [PagesController::class,'index'])->name('fiche');
 
 /* Products Routes */
 Route::get('/boutique', [ProductController::class,'index'])->name('products.index');
@@ -44,10 +46,11 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/merci', [CheckoutController::class,'thankYou'])->name('checkout.thankYou');
     Route::get('/pdf/{id}', [CheckoutController::class,'pdf'])->name('checkout.pdf');
 
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 });
 
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 Route::group(['prefix' => 'admin'], function () {
